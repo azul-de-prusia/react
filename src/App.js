@@ -1,6 +1,8 @@
 //impotación de la librería React y la clase component
 import React, {Component} from 'react';
 import './App.css';
+import Task from './components/task';
+import Title from './components/title';
 
 //Esqueleto del componente
 class App extends Component {
@@ -34,7 +36,7 @@ class App extends Component {
   //Retorna un componente escrito en JSX
   return (
     <div className="container">
-       <h1 className="title">To do list<span aria-label="emoji" role="img">🔥</span></h1>
+        <Title/>
        [onChangecambia el valor del estado en el input, onSubmit hace que se recargue porque debería enviar los datos a un servidor, preventDefault evita el refresh]
         <form onSubmit={this.handleSubmit}>
           <input
@@ -44,14 +46,11 @@ class App extends Component {
             className="new-task" 
           />
         </form>
-       <h2 className="test-label">{this.state.newTask}</h2>
 
-[este pedacito usa .map de JS para iterar task y almacena en un h3 con lo que podremos después mostrar el contenido]
+[este pedacito usa .map de JS para iterar Task y almacena en un h3 con lo que podremos después mostrar el contenido]
       {
         this.state.tasks.map(task =>
-        <div className="task-container">
-        <h3 className="task">{task}</h3>
-        </div>
+        <Task/>
         )
       }
     </div>
