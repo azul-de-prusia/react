@@ -1,8 +1,8 @@
 //impotación de la librería React y la clase component
 import React, {Component} from 'react';
 import './App.css';
-import Task from './components/task';
-import Title from './components/title';
+import Task from './Components/task';
+import Title from './Components/title';
 
 //Esqueleto del componente
 class App extends Component {
